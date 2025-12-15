@@ -16,6 +16,16 @@ def convert_mermaid_to_image(mermaid_content):
     import platform
     import os
     
+    # Set Puppeteer executable path for Windows
+    if platform.system() == 'Windows':
+        puppeteer_cache = os.path.expanduser(r'~\.cache\puppeteer')
+        if os.path.exists(puppeteer_cache):
+            # Find the Chrome executable
+            for root, dirs, files in os.walk(puppeteer_cache):
+                if 'chrome.exe' in files:
+                    os.environ['PUPPETEER_EXECUTABLE_PATH'] = os.path.join(root, 'chrome.exe')
+                    break
+    
     try:
         # Create temporary files
         with tempfile.NamedTemporaryFile(mode='w', suffix='.mmd', delete=False, encoding='utf-8') as mmd_file:
