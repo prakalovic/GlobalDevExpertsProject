@@ -1,0 +1,196 @@
+<mxfile host="65bd71144e">
+    <diagram id="CyberFortNexus" name="CyberFortNexus Architecture">
+        <mxGraphModel dx="1152" dy="1939" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="20" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;startArrow=classic;startFill=1;" edge="1" parent="1" source="internet" target="16">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="internet" value="🌐 Internet" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#ECE133;strokeColor=#C4BA2A;strokeWidth=3;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="510" y="-90" width="200" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="container" value="🏢 On-Premises Enterprise Infrastructure" style="swimlane;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;strokeWidth=2;fontStyle=1;fontSize=16;startSize=40;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="130" width="1070" height="1010" as="geometry"/>
+                </mxCell>
+                <mxCell id="endpoints" value="User Endpoints" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-monitor-128.png;fontStyle=1;fontSize=12;" vertex="1" parent="container">
+                    <mxGeometry x="60" y="64" width="100" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="buffer" value="📦 Traffic Buffer&lt;br&gt;Handles Spikes" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fillColor=#029E73;strokeColor=#027A5A;strokeWidth=3;fontStyle=1;fontSize=12;fontColor=#FFFFFF;" vertex="1" parent="container">
+                    <mxGeometry x="470" y="260" width="180" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="fileanalysis" value="📄 File Analysis&lt;br&gt;Malware Detection" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fillColor=#0173B2;strokeColor=#014F86;strokeWidth=3;fontStyle=1;fontSize=12;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="container">
+                    <mxGeometry x="140" y="455" width="160" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="ccdetector" value="🎯 C&amp;C Detector&lt;br&gt;Traffic Analysis" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fillColor=#0173B2;strokeColor=#014F86;strokeWidth=3;fontStyle=1;fontSize=12;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="container">
+                    <mxGeometry x="460" y="455" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="netforensics" value="🔍 Network Forensics&lt;br&gt;Metadata Indexing" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fillColor=#0173B2;strokeColor=#014F86;strokeWidth=3;fontStyle=1;fontSize=12;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="container">
+                    <mxGeometry x="820" y="455" width="180" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="alertdb" value="🚨 Alerts" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#CC78BC;strokeColor=#A85C96;strokeWidth=3;fontStyle=1;fontSize=12;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="container">
+                    <mxGeometry x="230" y="615" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="forensicsdb" value="📊 Forensics&lt;br&gt;3-month retention" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#CC78BC;strokeColor=#A85C96;strokeWidth=3;fontStyle=1;fontSize=12;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="container">
+                    <mxGeometry x="850" y="615" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="userdb" value="👤 Users &amp;&lt;br&gt;Investigations" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#CC78BC;strokeColor=#A85C96;strokeWidth=3;fontStyle=1;fontSize=12;fontColor=#FFFFFF;shadow=1;" vertex="1" parent="container">
+                    <mxGeometry x="760" y="745" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="aci" value="🧠 ACI&lt;br&gt;Automatic Cyber Investigator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DE8F05;strokeColor=#B87304;strokeWidth=3;fontStyle=1;fontSize=12;fontColor=#FFFFFF;arcSize=20;shadow=1;" vertex="1" parent="container">
+                    <mxGeometry x="520" y="745" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;endFill=1;startArrow=classic;startFill=1;" edge="1" parent="container" source="endpoints" target="16">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge3label" value="Traffic" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;" connectable="0" vertex="1" parent="edge3">
+                    <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="container" source="buffer" target="fileanalysis">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="488" y="350" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge5label" value="Files" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;" connectable="0" vertex="1" parent="edge5">
+                    <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;endFill=1;exitX=0.441;exitY=0.957;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="container" source="buffer" target="ccdetector">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="560" y="385" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge6label" value="Packets" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;" connectable="0" vertex="1" parent="edge6">
+                    <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="container" source="16" target="netforensics">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="container" source="fileanalysis" target="alertdb">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge8label" value="Alerts" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;" connectable="0" vertex="1" parent="edge8">
+                    <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="container" source="ccdetector" target="alertdb">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="330" y="500"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge9label" value="Alerts" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;" connectable="0" vertex="1" parent="edge9">
+                    <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="container" source="netforensics" target="forensicsdb">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge10label" value="Metadata" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;" connectable="0" vertex="1" parent="edge10">
+                    <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="container" source="alertdb" target="aci">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="580" y="655"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="container" source="forensicsdb" target="aci">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="660" y="655"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="container" source="aci" target="userdb">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="container" source="alertdb" target="15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="290" y="945"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge14label" value="Query" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;" connectable="0" vertex="1" parent="edge14">
+                    <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="container" source="forensicsdb" target="15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="920" y="915"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge15label" value="Query" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;" connectable="0" vertex="1" parent="edge15">
+                    <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;endFill=1;startArrow=classic;startFill=1;" edge="1" parent="container" source="userdb" target="15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="820" y="885"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge16label" value="Cases" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;" connectable="0" vertex="1" parent="edge16">
+                    <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;endFill=1;" edge="1" parent="container" source="aci" target="15">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge17label" value="Results" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;" connectable="0" vertex="1" parent="edge17">
+                    <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;strokeWidth=2;" edge="1" parent="container" source="8" target="15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1030" y="120"/>
+                            <mxPoint x="1030" y="950"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge13label" value="Access" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;" connectable="0" vertex="1" parent="13">
+                    <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="&lt;b&gt;SOC Analyst&lt;/b&gt;" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.user;" vertex="1" parent="container">
+                    <mxGeometry x="930" y="90.5" width="79" height="79" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="&lt;b&gt;Investigation Portal&lt;/b&gt;" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.opensearch_dashboards;" vertex="1" parent="container">
+                    <mxGeometry x="537.29" y="875" width="145.42" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" style="edgeStyle=none;html=1;strokeWidth=2;" edge="1" parent="container" source="16" target="buffer">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge21label" value="Mirror" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontStyle=1;" connectable="0" vertex="1" parent="21">
+                    <mxGeometry x="-0.1" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="&lt;b&gt;Gateway Switch&lt;/b&gt;" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.api_gateway;" vertex="1" parent="container">
+                    <mxGeometry x="516" y="70" width="88" height="88" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
